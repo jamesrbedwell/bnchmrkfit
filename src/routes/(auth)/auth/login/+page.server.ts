@@ -11,7 +11,7 @@ export const actions: Actions = {
 			console.error(error);
 			return redirect(303, '/auth/error');
 		} else {
-			return redirect(303, '/private');
+			return redirect(303, '/dashboard');
 		}
 	}
 };

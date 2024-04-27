@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { Icons } from '$lib/components/icons';
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
@@ -23,12 +24,13 @@
 	</Card.Header>
 	<Card.Content>
 		<div class="grid min-w-72 gap-6">
-			<form action="/login">
+			<form action="?/login" method="POST" use:enhance>
 				<div class="grid gap-2">
 					<div class="grid gap-1">
 						<Label class="sr-only" for="email">Email</Label>
 						<Input
 							id="email"
+							name="email"
 							placeholder="name@example.com"
 							type="email"
 							autocapitalize="none"
@@ -41,6 +43,7 @@
 						<Label class="sr-only" for="password">Password</Label>
 						<Input
 							id="password"
+							name="password"
 							placeholder="password"
 							type="password"
 							autocapitalize="none"
