@@ -23,7 +23,7 @@
 	</Card.Header>
 	<Card.Content>
 		<div class="grid min-w-72 gap-6">
-			<form on:submit|preventDefault={onSubmit}>
+			<form action="/login">
 				<div class="grid gap-2">
 					<div class="grid gap-1">
 						<Label class="sr-only" for="email">Email</Label>

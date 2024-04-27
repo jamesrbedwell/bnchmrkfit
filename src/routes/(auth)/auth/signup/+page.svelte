@@ -4,15 +4,7 @@
 	import * as Card from '$lib/components/ui/card';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-
-	let isLoading = false;
-	async function onSubmit() {
-		isLoading = true;
-
-		setTimeout(() => {
-			isLoading = false;
-		}, 3000);
-	}
+	import { enhance } from '$app/forms';
 </script>
 
 <Card.Root>
@@ -24,48 +16,48 @@
 	</Card.Header>
 	<Card.Content>
 		<div class="grid min-w-72 gap-6">
-			<form on:submit|preventDefault={onSubmit}>
+			<form action="?/signup" method="POST" use:enhance>
 				<div class="grid gap-2">
 					<div class="grid gap-1">
 						<Label class="sr-only" for="email">Email</Label>
 						<Input
 							id="email"
+							name="email"
 							placeholder="name@example.com"
 							type="email"
 							autocapitalize="none"
 							autocomplete="email"
 							autocorrect="off"
-							disabled={isLoading}
 						/>
 					</div>
 					<div class="grid gap-1">
 						<Label class="sr-only" for="password">Password</Label>
 						<Input
 							id="password"
+							name="password"
 							placeholder="password"
 							type="password"
 							autocapitalize="none"
 							autocomplete="password"
 							autocorrect="off"
-							disabled={isLoading}
 						/>
 					</div>
 					<div class="grid gap-1">
 						<Label class="sr-only" for="confirmpassword">Confirm password</Label>
 						<Input
 							id="confirmpassword"
+							name="confirmpassword"
 							placeholder="confirm password"
 							type="password"
 							autocapitalize="none"
 							autocomplete="password"
 							autocorrect="off"
-							disabled={isLoading}
 						/>
 					</div>
-					<Button type="submit" disabled={isLoading}>
-						{#if isLoading}
+					<Button type="submit">
+						<!-- {#if isLoading}
 							<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
-						{/if}
+						{/if} -->
 						Create account
 					</Button>
 				</div>
@@ -78,8 +70,8 @@
 					<span class="bg-background px-2 text-muted-foreground"> Or continue with </span>
 				</div>
 			</div>
-			<Button variant="outline" type="button" disabled={isLoading}>
-				{#if isLoading}
+			<Button variant="outline" type="button">
+				{#if false}
 					<Icons.spinner class="mr-2 h-4 w-4 animate-spin" />
 				{:else}
 					<Icons.google class="mr-2 h-4 w-4" />
