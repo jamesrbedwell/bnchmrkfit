@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@supabase/ssr": "^0.3.0",
+		"@supabase/supabase-js": "^2.42.7",
 		"bits-ui": "^0.21.5",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "0.372.0",
